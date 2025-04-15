@@ -1,6 +1,6 @@
 const koa = require("koa");
 const Router = require("@koa/router");
-const session = require("koa-session");
+const session = require("koa-session"); // Ensure this is correctly imported
 const passport = require("koa-passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 require("dotenv").config();
@@ -11,20 +11,19 @@ const router = new Router();
 app.keys = [process.env.SESSION_SECRET];
 
 const config = {
-  key: "koa:sess", // default "koa.sess"
-  maxAge: 96400000, // in milliseconds
-  autoCommit: true, // automatically commit headers (default true)
-  overwrite: true, // can overwrite or not (default true)
-  httpOnly: true, // httpOnly or not (default true)
-  signed: true, // signed or not (default true)
-  rolling: false, // force a session identifier cookie to be set on every response. (default: false)
-  renew: true, // renew session when session is nearly expired, but use original maxAge (default: false)
-  secure: true, // true only works in https (default: false)
-  sameSite: null, // session cookie sameSite options (default null, don't set it)
-  domain: "null", // domain for set cookie (default null)
+  key: "koa:sess",
+  maxAge: 96400000,
+  autoCommit: true,
+  overwrite: true,
+  httpOnly: true,
+  signed: true,
+  rolling: false,
+  renew: true,
+  secure: true, // Ensure your app is running on HTTPS if secure is true
+  sameSite: null,
 };
 
-app.use(session(config, app)); // enable session support
+app.use(session(config, app)); // Ensure this line is correct
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -46,6 +45,7 @@ passport.use(
     },
     (accessToken, refreshToken, profile, done) => {
       // save the user info to the database
+      return done(null, profile);
     }
   )
 );
@@ -58,16 +58,12 @@ function ensureAuthenticatedUser(ctx, next) {
   }
 }
 
-//define the routes
-
 router.get("/", (ctx) => {
   ctx.body =
     'Welcome to the Koa server! <a href="/auth/google">Login with Google</a>';
 });
 
-router.get("/auth/google", (ctx) => {
-  passport.authenticate("google", { scope: ["profile", "email"] });
-});
+router.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
 router.get(
   "/auth/google/callback",
