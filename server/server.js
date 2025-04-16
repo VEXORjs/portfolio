@@ -1,26 +1,33 @@
-const koa = require("koa");
-const Router = require("@koa/router");
-const session = require("koa-session"); // Ensure this is correctly imported
-const passport = require("koa-passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-require("dotenv").config();
+import koa from "koa";
+import session from "koa-session"; // Ensure this is correctly imported
+import passport from "koa-passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import favicon from "koa-favicon";
+import "dotenv/config";
+import { join } from "path";
+import path from "path";
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = new koa();
-const router = new Router();
+
+const faviconPath = join(__dirname, "./client", "favicon.ico");
+
+app.use(favicon(faviconPath)); // Ensure the path is correct
 
 app.keys = [process.env.SESSION_SECRET];
 
 const config = {
   key: "koa:sess",
-  maxAge: 96400000,
+  maxAge: "session",
   autoCommit: true,
   overwrite: true,
-  httpOnly: true,
+  httpOnly: false,
   signed: true,
   rolling: false,
   renew: true,
-  secure: true, // Ensure your app is running on HTTPS if secure is true
-  sameSite: null,
+  secure: false, // Ensure your app is running on HTTPS if secure is true
 };
 
 app.use(session(config, app)); // Ensure this line is correct
@@ -39,8 +46,8 @@ passport.deserializeUser((user, done) => {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       callbackURL: "http://localhost:3000/auth/google/callback",
     },
     (accessToken, refreshToken, profile, done) => {
@@ -57,36 +64,6 @@ function ensureAuthenticatedUser(ctx, next) {
     ctx.redirect("/login");
   }
 }
-
-router.get("/", (ctx) => {
-  ctx.body =
-    'Welcome to the Koa server! <a href="/auth/google">Login with Google</a>';
-});
-
-router.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
-
-router.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    successRedirect: "/protected",
-    failureRedirect: "/login",
-  })
-);
-
-router.get("/protected", ensureAuthenticatedUser, (ctx) => {
-  ctx.body = `Welcome ${ctx.state.user.displayName}! to the protected route!`;
-});
-
-router.get("/login", (ctx) => {
-  ctx.body = "Login failed. <a href='/auth/google'>You need to try again</a>";
-});
-
-router.get("/logout", (ctx) => {
-  ctx.logout();
-  ctx.redirect("/");
-});
-
-app.use(router.routes()).use(router.allowedMethods());
 
 app.use((ctx) => {
   if (ctx.path === "/") {
