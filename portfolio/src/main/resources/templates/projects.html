@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Moje Portfolio</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" th:href="@{/projects.css}"/>
 </head>
 <body>
 <ul>
@@ -12,8 +13,10 @@
         <h3 th:text="${project.getTitle()}"></h3>
         <p th:text="${project.getDescription()}"></p>
         <p th:text="${project.getCreationDate()}"></p>
-        <img th:src="${project.getThumbnailUrl()}" alt="">
-        <a th:href="${project.getGithubUrl()}">Kod</a>
+        <a th:href="${project.getUrl()}">
+            <img th:src="${project.getThumbnailUrl()}" alt="">
+        </a>
+        <a th:href="${project.getGithubUrl()}"><span class="pointer">Source code on Github</span></a>
         <div>
             <span th:each="tech : ${project.technologies}" th:style="'color: ' + ${tech.color}">
                  <i th:class="${tech.iconClass}"></i>

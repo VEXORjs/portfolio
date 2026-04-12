@@ -1,18 +1,17 @@
-/* Resetowanie marginesów */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ustawienia dla całej sekcji nawigacji */
 .navbar {
     width: 100%;
-    height: 80px;      /* Tutaj ustalasz wysokość paska */
+    height: 80px;
     background-color: #1a1a1a;
     display: flex;
     align-items: center;
-    position: fixed;   /* Pasek zawsze na górze */
+    position: fixed;
     top: 0;
     z-index: 1000;
     justify-content: space-between;
@@ -20,18 +19,16 @@
     padding-right: 5rem;
 }
 
-/* Stylizacja listy linków */
 .nav-links {
     width: 100%;
-    height: 100%;      /* Dziedziczy 80px z .navbar */
+    height: 100%;
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 1rem; /* Rozmieszcza logo i linki równomiernie */
+    gap: 1rem;
     justify-content: space-evenly;
 }
 
-/* Stylizacja linków tekstowych */
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -40,18 +37,16 @@
     transition: 0.3s;
 }
 
-/* 1. Upewnij się, że div logo wypełnia wysokość listy */
 .logo {
     height: 100%;
     display: flex;
-    align-items: center; /* Wyśrodkuje obrazek w pionie */
+    align-items: center;
 }
 
-/* 2. To jest kluczowe - obrazek musi mieć 100% wysokości kontenera .logo */
 .logo img {
-    height: 100%;     /* Obrazek rośnie do 80px (wysokość navbaru) */
-    width: 100%;       /* Szerokość dopasuje się sama, żeby nie było "rozciągnięte" */
-    padding: 10px 0;   /* Dzięki temu obrazek nie dotyka krawędzi paska */
+    height: 100%;
+    width: 100%;
+    padding: 10px 0;
     display: block;
     border-radius: 20%;
     cursor: pointer;

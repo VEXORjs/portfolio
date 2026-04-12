@@ -10,14 +10,16 @@ public class Project {
     private final String thumbnailUrl;
     private final String githubUrl;
     private final List<Technology> technologies;
+    private final String url;
 
-    public Project(String title, String description, LocalDate creationDate, String thumbnailUrl, String githubUrl, List<Technology> technologies) {
+    public Project(String title, String description, LocalDate creationDate, String thumbnailUrl, String githubUrl, List<Technology> technologies,  String url) {
         this.title = title;
         this.description = description;
         this.creationDate = creationDate;
         this.thumbnailUrl = thumbnailUrl;
         this.githubUrl = githubUrl;
         this.technologies = technologies;
+        this.url = url;
     }
 
     public String getTitle() {
@@ -42,5 +44,9 @@ public class Project {
 
     public List<Technology> getTechnologies() {
         return technologies;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }
