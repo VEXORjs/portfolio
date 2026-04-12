@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Moje Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" th:href="@{/projects.css}"/>
+</head>
+<body>
+<ul>
+    <li th:each="project : ${projects}">
+        <h3 th:text="${project.getTitle()}"></h3>
+        <p th:text="${project.getDescription()}"></p>
+        <p th:text="${project.getCreationDate()}"></p>
+        <a th:href="${project.getUrl()}">
+            <img th:src="${project.getThumbnailUrl()}" alt="">
+        </a>
+        <a th:href="${project.getGithubUrl()}"><span class="pointer">Source code on Github</span></a>
+        <div>
+            <span th:each="tech : ${project.technologies}" th:style="'color: ' + ${tech.color}">
+                 <i th:class="${tech.iconClass}"></i>
+                 <span th:text="${tech.name}"></span>
+            </span>
+        </div>
+    </li>
+</ul>
+</body>
