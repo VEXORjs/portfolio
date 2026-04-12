@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+        <link rel="stylesheet" th:href="@{/home.css}">
+    </head>
+<body>
+<section class="upper">
+</section>
+<nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img th:src="@{/logo.png}" alt="ZJ">
+            </div>
+            <ul class="nav-links">
+                <li><a th:href="@{projects}">Projects</a></li>
+                <li><a th:href="@{extras}">Extras</a></li>
+                <li><a th:href="@{media}">Media</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <ul class="nav-links">
+            <li><a th:href="@{contact}" class="btn-contact">Contact Me</a></li>
+            </ul>
+        </div>
+</nav>
+<nav class="me">
+    <div class="container">
+        <img src="" alt="me">
+        <p></p>
+    </div>
+</nav>
+<section class="my_projects">
+
+</section>
+</body>
