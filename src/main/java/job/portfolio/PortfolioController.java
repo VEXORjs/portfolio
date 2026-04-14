@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 public class PortfolioController {
 
@@ -15,7 +17,13 @@ public class PortfolioController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("title", "Portfolio Application");
+        List<Project> topProjects = projectProvider.getProjects()
+                .stream()
+                .limit(3)
+                .toList();
+
+        model.addAttribute("projects", topProjects);
+        model.addAttribute("isHomePage", true);
         return "home";
     }
 
@@ -24,4 +32,4 @@ public class PortfolioController {
         model.addAttribute("projects", projectProvider.getProjects());
         return "projects";
     }
-}
+    }

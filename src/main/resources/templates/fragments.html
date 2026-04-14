@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="card(project)">
+    <li class="project-card">
+        <h3 th:text="${project.title}"></h3>
+        <img th:src="${project.thumbnailUrl}" alt="">
+        <p th:text="${project.description}"></p>
+        <div class="tech-container">
+            <span th:each="tech : ${project.technologies}" class="tech-pill">
+                <i th:class="${tech.iconClass}" th:style="'color: ' + ${tech.color}"></i>
+                <span th:text="${tech.name}"></span>
+            </span>
+        </div>
+        <a th:href="${project.githubUrl}">Kod</a>
+    </li>
+</div>
+</body>
+</html>

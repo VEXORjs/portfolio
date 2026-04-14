@@ -1,0 +1,114 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222831;
+    margin: 0;
+    padding: 20px;
+    color: #EEEEEE;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+li:hover {
+    transform: translateY(-10px);
+}
+
+img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+a {
+    display: inline-block;
+    margin-top: auto;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+div {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+i {
+    font-size: 1.3rem;
+}
+
+.btn {
+    border: 2px solid #00ADB5;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+// 1. Zmienne - łatwo tu zmienisz wygląd całej strony
+$wave-color: #000;
+$wave-speed: 1.5s;
+$letter-spacing: 0.07s; // Odstęp czasu między literami
+
+.wave-text {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+
+  span {
+    display: inline-block;
+    color: $wave-color;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: wave-bounce $wave-speed ease-in-out infinite;
+  }
+}
+
+// 2. Pętla generująca nth-child - to zastępuje Twoje ręczne pisanie!
+@for $i from 1 through 30 {
+  .wave-text span:nth-child(#{$i}) {
+    animation-delay: #{$i * $letter-spacing};
+  }
+}
+
+// 3. Definicja animacji
+@keyframes wave-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+    color: white; // Litera "podświetla się" w górze
+  }
+}

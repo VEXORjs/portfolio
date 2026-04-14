@@ -16,6 +16,8 @@ private final List<Project> projects = new ArrayList<>();
         Technology html = new Technology("HTML", "#e34c26", "devicon-html5-plain");
         Technology css = new Technology("CSS", "#264de4", "devicon-css3-plain");
         Technology js = new Technology("JS", "#f7df1e",  "devicon-javascript-plain");
+        Technology java = new Technology("Java", "#F58E27","devicon-java-plain" );
+        Technology vue = new Technology( "Vue", "#27F56C", "devicon-vuejs-plain" );
 
         List<Technology> wiedzminTech = List.of(html, css, js);
 
@@ -23,7 +25,7 @@ private final List<Project> projects = new ArrayList<>();
                 "The Witcher Website",
                 "Projekt szkolny - interaktywna strona o świecie Wiedźmina.",
                 LocalDate.of(2023, 10, 20),
-                "/banner.jpg",
+                "banner.jpg",
                 "https://github.com/VEXORjs/Wiedzmin_Strona",
                 wiedzminTech,
                 "https://wiedzmin-strona.vercel.app/");
@@ -44,6 +46,35 @@ private final List<Project> projects = new ArrayList<>();
                 "https://gym-city.vercel.app/");
 
         projects.add(gymProject);
+
+        List<Technology> kryptoTech = List.of(java);
+
+        Project kryptoProject = new Project(
+                "Kryptografia",
+                "Projekt studencki - poznanie zasad działania DES'a. ",
+                LocalDate.of(2026, 4, 1),
+                "krypto.png",
+                "https://github.com/VEXORjs/krypto",
+                kryptoTech,
+                ""
+        );
+
+        projects.add(kryptoProject);
+
+        List<Technology> vueTech = List.of(html, css, js, vue);
+
+        Project vueProject = new Project(
+                "TODO Web App",
+                "Basic TODO App.",
+                LocalDate.of(2022, 1, 1),
+                "todo.png",
+                "https://github.com/VEXORjs/TODO-WEB-App/tree/master",
+                vueTech,
+                "https://todo-web-app-ten.vercel.app/"
+        );
+
+        projects.add(vueProject);
+
     }
     List<Project> getProjects() {
         return projects;
