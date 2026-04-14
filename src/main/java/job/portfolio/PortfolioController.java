@@ -32,4 +32,4 @@ public class PortfolioController {
         model.addAttribute("projects", projectProvider.getProjects());
         return "projects";
     }
-}
+    }
