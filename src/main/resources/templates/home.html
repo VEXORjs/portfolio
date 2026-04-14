@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio - Kacper</title>
-    <link rel="stylesheet" th:href="@{/home.css}">
-    <link rel="stylesheet" th:href="@{/projects.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <link rel="stylesheet" th:href="@{/css/projects.css}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
 
@@ -16,9 +18,9 @@
             <img th:src="@{/logo.png}" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a th:href="@{/#projects}">Projects</a></li>
-            <li><a th:href="@{/#extras}">Extras</a></li>
-            <li><a th:href="@{/#media}">Media</a></li>
+            <li class="nav-el"><a th:href="@{/#projects}">Projects</a></li>
+            <li class="nav-el"><a th:href="@{/#extras}">Extras</a></li>
+            <li class="nav-el"><a th:href="@{/#media}">Media</a></li>
         </ul>
     </div>
 
@@ -35,9 +37,9 @@
         <div class="wave-container">
             <h1 class="wave-text">
                 <p class="letter-animation">
-                    <span>H</span><span>e</span><span>y</span><span>,</span>
-                    <span>I</span><span>'</span><span>m</span>
-                    <span>K</span><span>a</span><span>c</span><span>p</span><span>e</span><span>r</span>
+                    <span>H</span><span>e</span><span>y</span><span>,</span><span>&nbsp;</span>
+                    <span>I</span><span>'</span><span>m</span><span>&nbsp;</span>
+                    <span>K</span><span>a</span><span>c</span><span>p</span><span>e</span><span>r</span><span>&nbsp;</span>
                     <span>A</span><span>d</span><span>a</span><span>m</span><span>c</span><span>z</span><span>y</span><span>k</span><span>.</span>
                 </p>
             </h1>

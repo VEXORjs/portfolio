@@ -76,24 +76,39 @@ i {
     cursor: pointer;
 }
 
-.wave-text span {
+// 1. Zmienne - łatwo tu zmienisz wygląd całej strony
+$wave-color: #000;
+$wave-speed: 1.5s;
+$letter-spacing: 0.07s; // Odstęp czasu między literami
+
+.wave-text {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+
+  span {
     display: inline-block;
+    color: $wave-color;
     font-size: 2rem;
-    animation: wave 2s ease-in-out infinite;
+    font-weight: bold;
+    animation: wave-bounce $wave-speed ease-in-out infinite;
+  }
 }
 
-/* Przykład w SCSS - generuje 50 selektorów w sekundę */
-@for $i from 1 through 50 {
-    .wave-text span:nth-child(#{$i}) {
-        animation-delay: #{$i * 0.07s};
-    }
+// 2. Pętla generująca nth-child - to zastępuje Twoje ręczne pisanie!
+@for $i from 1 through 30 {
+  .wave-text span:nth-child(#{$i}) {
+    animation-delay: #{$i * $letter-spacing};
+  }
 }
 
-@keyframes wave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+// 3. Definicja animacji
+@keyframes wave-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+    color: white; // Litera "podświetla się" w górze
+  }
 }
