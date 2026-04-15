@@ -76,10 +76,9 @@ i {
     cursor: pointer;
 }
 
-// 1. Zmienne - łatwo tu zmienisz wygląd całej strony
 $wave-color: #000;
 $wave-speed: 1.5s;
-$letter-spacing: 0.07s; // Odstęp czasu między literami
+$letter-spacing: 0.07s;
 
 .wave-text {
   display: flex;
@@ -95,7 +94,6 @@ $letter-spacing: 0.07s; // Odstęp czasu między literami
   }
 }
 
-// 2. Pętla generująca nth-child - to zastępuje Twoje ręczne pisanie!
 @for $i from 1 through 30 {
   .wave-text span:nth-child(#{$i}) {
     animation-delay: #{$i * $letter-spacing};
@@ -109,6 +107,7 @@ $letter-spacing: 0.07s; // Odstęp czasu między literami
   }
   50% {
     transform: translateY(-20px);
-    color: white; // Litera "podświetla się" w górze
+    color: white;
   }
 }
+

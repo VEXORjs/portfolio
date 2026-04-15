@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="pl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio - Kacper</title>
+    <title>Kacper Adamczyk - Java Developer & Portfolio Projektów</title>
+    <meta name="description" content="Portfolio Kacpra Adamczyka. Zobacz moje projekty w Spring Boot, Java i technologiach webowych.">
     <link rel="stylesheet" th:href="@{/css/home.css}">
     <link rel="stylesheet" th:href="@{/css/projects.css}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -14,19 +15,17 @@
 
 <nav class="navbar">
     <div class="nav-left">
-        <div class="logo">
-            <img th:src="@{/logo.png}" alt="Logo">
-        </div>
         <ul class="nav-links">
-            <li class="nav-el"><a th:href="@{/#projects}">Projects</a></li>
-            <li class="nav-el"><a th:href="@{/#extras}">Extras</a></li>
-            <li class="nav-el"><a th:href="@{/#media}">Media</a></li>
+            <img class="img" th:src="@{/logo.png}" alt="Logo">
+            <a th:href="@{/#projects}" class="button">Projects</a>
+            <a th:href="@{/#extras}" class="button">Extras</a>
+            <a th:href="@{/#media}" class="button">Media</a>
         </ul>
     </div>
 
     <div class="nav-right">
         <ul class="nav-links">
-            <li><a th:href="@{/#contact}" class="btn-contact">Contact Me</a></li>
+           <a th:href="@{/#contact}" class="button">Contact Me</a>
         </ul>
     </div>
 </nav>
@@ -35,18 +34,19 @@
     <div class="container">
         <img th:src="@{/me.jpg}" alt="To ja">
         <div class="wave-container">
-            <h1 class="wave-text">
+            <h2 class="wave-text" aria-label="Hey, I'm Kacper Adamczyk">
                 <p class="letter-animation">
                     <span>H</span><span>e</span><span>y</span><span>,</span><span>&nbsp;</span>
                     <span>I</span><span>'</span><span>m</span><span>&nbsp;</span>
                     <span>K</span><span>a</span><span>c</span><span>p</span><span>e</span><span>r</span><span>&nbsp;</span>
                     <span>A</span><span>d</span><span>a</span><span>m</span><span>c</span><span>z</span><span>y</span><span>k</span><span>.</span>
                 </p>
-            </h1>
+            </h2>
         </div>
     </div>
 </header>
 
+<h2 class="header_2">My Projects</h2>
 <section id="projects" class="my_projects">
     <th:block th:each="project : ${projects}">
         <div th:replace="~{fragments :: card(${project})}"></div>
@@ -54,7 +54,7 @@
 </section>
 
 <section class="see-projects">
-    <a th:href="@{/projects}" class="btn">Zobacz wszystkie projekty →</a>
+    <a th:href="@{/projects}" class="button">Zobacz wszystkie projekty →</a>
 </section>
 
 </body>

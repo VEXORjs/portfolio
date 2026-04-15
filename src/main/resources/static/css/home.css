@@ -5,8 +5,18 @@
   box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
-  padding-top: 100px; /* Robi miejsce na fixed navbar (80px + 20px luzu) */
+  padding-top: 100px;
   background-color: #7B68EE;
   font-family: "Segoe UI", sans-serif;
 }
@@ -15,27 +25,15 @@ body {
 .navbar {
   width: 100%;
   height: 80px;
-  background-color: #1a1a1a;
+  background-color: rgb(50, 50, 50);
   display: flex;
   align-items: center;
   position: fixed;
   top: 0;
-  left: 0; /* Ważne przy position fixed */
+  left: 0;
   z-index: 1000;
   justify-content: space-between;
-  padding: 0 5rem;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
+    opacity: 95%;
 }
 
 .nav-links li a {
@@ -49,15 +47,8 @@ body {
   color: #007bff;
 }
 
-/* LOGO */
-.logo {
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 60px; /* Trochę mniejszy niż pasek */
+.img {
+  height: 60px;
   border-radius: 20%;
   cursor: pointer;
 }
@@ -82,11 +73,15 @@ body {
 
 /* PROJECTS GRID */
 .my_projects {
+    background-color: white;
   display: flex;
-  flex-wrap: wrap; /* Pozwala projektom spadać do nowej linii na telefonie */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 2rem;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 /* BUTTON */
@@ -96,17 +91,17 @@ body {
   padding: 2rem;
 }
 
-.btn {
-  background-color: #1a1a1a;
+.button {
+    background-color: rgb(50, 50, 50);
   color: white;
-  padding: 1rem 2rem;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 15px;
   font-weight: bold;
   transition: 0.3s;
+    padding: 1rem 1rem;
 }
 
-.btn:hover {
+.button:hover {
   background-color: #000;
   transform: scale(1.05);
 }
@@ -127,4 +122,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.header_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
 }
