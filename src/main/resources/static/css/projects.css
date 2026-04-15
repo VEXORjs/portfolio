@@ -10,11 +10,11 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   list-style: none;
-    padding: 2rem 1rem 2rem 2rem;
-    margin: 2rem auto;
-    align-self: center;
-    justify-content: center;
-    width: 100%;
+  padding: 2rem 1rem 2rem 2rem;
+  margin: 2rem auto;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
 }
 
 li {
@@ -71,18 +71,18 @@ i {
 }
 
 .btn {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 1rem 1rem;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: bold;
-    transition: 0.3s;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #000;
-    transform: scale(1.05);
+  background-color: #000;
+  transform: scale(1.05);
 }
 
 .wave-text {
@@ -227,55 +227,51 @@ i {
     color: white;
   }
 }
-
 .header_1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .project-card {
-    width: 70%;
-    margin: 1.5rem;
+  width: 70%;
+  margin: 1.5rem;
 }
 
 .img-disabled-wrapper {
-    position: relative;
-    display: inline-block;
-    cursor: not-allowed;
+  position: relative;
+  display: inline-block;
+  cursor: not-allowed;
 }
 
 .img-disabled {
-    display: block;
-    filter: grayscale(100%) opacity(0.6);
-    width: 100%;
+  display: block;
+  filter: grayscale(100%) opacity(0.6);
+  width: 100%;
 }
 
 .img-disabled-text {
-    visibility: hidden;
-    width: 120px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 0.3s;
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .img-disabled-wrapper:hover .img-disabled-text {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }

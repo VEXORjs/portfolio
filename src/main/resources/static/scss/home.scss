@@ -1,7 +1,18 @@
+@charset "UTF-8";
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -10,131 +21,123 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* NAVBAR - BAZA */
+/* NAVBAR */
 .navbar {
   width: 100%;
   height: 80px;
-  background-color: #1a1a1a;
+  background-color: rgb(50, 50, 50);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  justify-content: space-between;
+  opacity: 95%;
 }
 
-/* LEWA STRONA */
-.nav-left {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 4rem;
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-/* LISTA UL */
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.nav-links a:hover {
+.nav-links li a:hover {
   color: #007bff;
 }
 
-/* PRAWA STRONA */
-.nav-right .nav-links {
-  gap: 0;
-}
-
-/* LOGO */
-.logo {
-    height: 80px;
-    display: flex;
-    align-items: center;
-}
-
-.logo .img {
-    height: 60px;
-    border-radius: 20%;
-    cursor: pointer;
+.img {
+  height: 60px;
+  border-radius: 20%;
+  cursor: pointer;
 }
 
 /* SECTION ME */
 .me {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-    text-align: center;
-    color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: whitesmoke;
 }
 
 .me p {
-    max-width: 600px;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: whitesmoke;
+  max-width: 600px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: whitesmoke;
 }
 
 /* PROJECTS GRID */
 .my_projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 1rem;
+  padding: 2rem;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /* BUTTON */
 .see-projects {
-    display: flex;
-    justify-content: center;
-    padding: 3rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.btn {
-  background-color: #1a1a1a;
+.button {
+  background-color: rgb(50, 50, 50);
   color: white;
-  padding: 1rem 2rem;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 15px;
   font-weight: bold;
   transition: 0.3s;
-  display: inline-block;
-  width: auto;
-  white-space: nowrap;
+  padding: 1rem 1rem;
 }
 
-.btn:hover {
-    background-color: #000;
-    transform: scale(1.05);
+.button:hover {
+  background-color: #000;
+  transform: scale(1.05);
 }
 
-.me .container .img {
+.me .container img {
   width: 18rem;
   height: 18rem;
   border-radius: 50%;
   border: 5px solid white;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
   object-fit: cover;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .me .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
 }
 
