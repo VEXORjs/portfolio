@@ -8,8 +8,17 @@
 <div th:fragment="card(project)">
     <li class="project-card">
         <h3 th:text="${project.title}"></h3>
-        <img th:src="${project.thumbnailUrl}" alt="">
+
+        <a th:if="${!#strings.isEmpty(project.url)}" th:href="${project.url}">
+            <img th:src="${project.thumbnailUrl}" th:alt="'Podgląd projektu ' + ${project.title}">
+        </a>
+        <div th:if="${#strings.isEmpty(project.url)}" class="img-disabled-wrapper">
+            <img th:src="${project.thumbnailUrl}" class="img-disabled" alt="Coming soon">
+            <span class="img-disabled-text">Coming soon...</span>
+        </div>
+
         <p th:text="${project.description}"></p>
+
         <div class="tech-container">
             <span th:each="tech : ${project.technologies}" class="tech-pill">
                 <i th:class="${tech.iconClass}" th:style="'color: ' + ${tech.color}"></i>

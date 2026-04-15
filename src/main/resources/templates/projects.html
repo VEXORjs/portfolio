@@ -8,6 +8,7 @@
 </head>
 <body>
 <a th:href = "@{/}" th:text = "'Home'" class="btn">Home</a>
+<h1 class="header_1">My projects</h1>
 <ul>
     <th:block th:each="project : ${projects}">
         <div th:replace="~{fragments :: card(${project})}"></div>
