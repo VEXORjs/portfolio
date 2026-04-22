@@ -18,6 +18,10 @@ private final List<Project> projects = new ArrayList<>();
         Technology js = new Technology("JS", "#f7df1e",  "devicon-javascript-plain");
         Technology java = new Technology("Java", "#F58E27","devicon-java-plain" );
         Technology vue = new Technology( "Vue", "#27F56C", "devicon-vuejs-plain" );
+        Technology csharp = new Technology("Csharp", "#264de4",  "devicon-csharp-plain");
+        Technology c = new Technology( "C", "#F58E27", "devicon-c-plain");
+        Technology cmake = new Technology( "Cmake", "#F58E27", "devicon-cmake-plain");
+        Technology python = new Technology( "Python", "#F58E27", "devicon-python-plain");
 
         List<Technology> wiedzminTech = List.of(html, css, js);
 
@@ -75,6 +79,47 @@ private final List<Project> projects = new ArrayList<>();
 
         projects.add(vueProject);
 
+        List<Technology> concurrentTech = List.of(csharp);
+
+        Project concurrentProject = new Project(
+                "Programowanie współbieżne - gra w bilard",
+                "Poznanie zasad programowania współbieżnego",
+                LocalDate.of(2026, 3, 1),
+                "wspolbiegi.png",
+                "https://github.com/VEXORjs/Kurs-programowanie-wspolbiezne",
+                concurrentTech,
+                ""
+        );
+
+        projects.add(concurrentProject);
+
+        List<Technology> embeddedTech = List.of(c, cmake);
+
+        Project embeddedProject = new Project(
+                "Systemy wbudowane - stacja pogodowa",
+                "Bliska praca z elektroniką",
+                LocalDate.of(2026, 3, 2),
+                "wbudy.png",
+                "https://github.com/VEXORjs/stacja_pogodowa",
+                embeddedTech,
+                ""
+        );
+
+        projects.add(embeddedProject);
+
+        List<Technology> AITech = List.of(python);
+
+        Project AITechProject = new Project(
+                "Gra w 15tke",
+                "Stworzenie prostej gry logicznej",
+                LocalDate.of(2026, 3, 12),
+                "sise.png",
+                "https://github.com/VEXORjs/15-Puzzle-game-Analysis",
+                AITech,
+                ""
+        );
+
+        projects.add(AITechProject);
     }
     List<Project> getProjects() {
         return projects;
