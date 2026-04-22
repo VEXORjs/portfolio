@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/projects.css(v=1.2)}">
 </head>
 <body>
-<a th:href = "@{/}" th:text = "'Home'" class="btn">Home</a>
+<a th:href = "@{/}" th:text = "'Home'" class="back_home">Home</a>
 <h1 class="header_1">My projects</h1>
 <ul>
     <th:block th:each="project : ${projects}">
