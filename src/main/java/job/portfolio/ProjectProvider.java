@@ -27,7 +27,7 @@ private final List<Project> projects = new ArrayList<>();
 
         Project wiedzminProject = new Project(
                 "The Witcher Website",
-                "Projekt szkolny - interaktywna strona o świecie Wiedźmina.",
+                "School project - made because of passion for Witcher games and lore.",
                 LocalDate.of(2023, 10, 20),
                 "banner.jpg",
                 "https://github.com/VEXORjs/Wiedzmin_Strona",
