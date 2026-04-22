@@ -8,14 +8,18 @@ body {
 
 ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 400px));
   gap: 2rem;
   list-style: none;
-  padding: 2rem 1rem 2rem 2rem;
+  padding: 0;
   margin: 2rem auto;
   align-self: center;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 li {
@@ -52,15 +56,7 @@ a {
   cursor: pointer;
 }
 
-div {
-  margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-
-span {
+.tech-pill {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -95,6 +91,7 @@ $letter-spacing: 0.07s;
   display: flex;
   justify-content: center;
   gap: 2px;
+  font-size: 2rem;
 
   span {
     display: inline-block;
@@ -102,6 +99,11 @@ $letter-spacing: 0.07s;
     font-size: 2rem;
     font-weight: bold;
     animation: wave-bounce $wave-speed ease-in-out infinite;
+
+    @media (max-width: 768px){
+      font-size: 1.4rem;
+      animation: wave-bounce-mobile $wave-speed ease-in-out infinite;
+    }
   }
 }
 
@@ -122,6 +124,16 @@ $letter-spacing: 0.07s;
   }
 }
 
+@keyframes wave-bounce-mobile {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+    color: white;
+  }
+}
+
 .header_1 {
   display: flex;
   flex-direction: row;
@@ -131,14 +143,27 @@ $letter-spacing: 0.07s;
 }
 
 .project-card {
-  width: 70%;
-  margin: 1.5rem;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
 .img-disabled-wrapper {
+  display: block;    /* Zmień z inline-block na block */
+  width: 100%;       /* Wymuś pełną szerokość */
   position: relative;
-  display: inline-block;
-  cursor: not-allowed;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;   /* Obrazek musi wypełniać wrapper */
+    display: block;
+    height:180px;
+    object-fit: cover;
+  }
 }
 
 .img-disabled {
@@ -172,4 +197,24 @@ $letter-spacing: 0.07s;
 .img-disabled-wrapper:hover .img-disabled-text {
   visibility: visible;
   opacity: 1;
+}
+
+.tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  width: 100%; // Dodaj to
+}
+
+li.project-card {
+  max-width: 350px;     /* Twoja wymarzona szerokość */
+  width: 100%;          /* Ale niech będzie elastyczna do tego limitu */
+  margin: 0 auto;       /* To usunie ten "margin-right" i wyśrodkuje kartę */
+
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
 }

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Projects</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" th:href="@{/css/projects.css(v=1.1)}">
+    <link rel="stylesheet" th:href="@{/css/projects.css(v=1.2)}">
 </head>
 <body>
 <a th:href = "@{/}" th:text = "'Home'" class="btn">Home</a>
 <h1 class="header_1">My projects</h1>
 <ul>
     <th:block th:each="project : ${projects}">
-        <div th:replace="~{fragments :: card(${project})}"></div>
+        <th:block th:replace="~{fragments :: card(${project})}"></th:block>
     </th:block>
 </ul>
