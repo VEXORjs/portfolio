@@ -8,7 +8,7 @@
     <li th:fragment="card(project)" class="project-card">
         <h3 th:text="${project.title}"></h3>
 
-        <a th:if="${!#strings.isEmpty(project.url)}" th:href="${project.url}">
+        <a th:if="${!#strings.isEmpty(project.url)}" th:href="${project.url}" target="_blank">
             <img th:src="${project.thumbnailUrl}" th:alt="'Podgląd projektu ' + ${project.title}">
         </a>
         <div th:if="${#strings.isEmpty(project.url)}" class="img-disabled-wrapper">
@@ -24,7 +24,7 @@
                 <span th:text="${tech.name}"></span>
             </span>
         </div>
-        <a class="code" th:href="${project.githubUrl}">Code</a>
+        <a class="code" th:href="${project.githubUrl}" target="_blank">Code</a>
     </li>
 </body>
 </html>
