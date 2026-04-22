@@ -5,8 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="card(project)">
-    <li class="project-card">
+    <li th:fragment="card(project)" class="project-card">
         <h3 th:text="${project.title}"></h3>
 
         <a th:if="${!#strings.isEmpty(project.url)}" th:href="${project.url}">
@@ -27,6 +26,5 @@
         </div>
         <a th:href="${project.githubUrl}">Kod</a>
     </li>
-</div>
 </body>
 </html>
