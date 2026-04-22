@@ -42,7 +42,7 @@ private final List<Project> projects = new ArrayList<>();
 
         Project gymProject = new Project(
                 "Gym City Website",
-                "Projekt szkolny - projekt na zaliczenie semestru. ",
+                "School project for the whole semester. ",
                 LocalDate.of(2022, 12, 1),
                 "gym.png",
                 "https://github.com/VEXORjs/Gym_City",
@@ -54,8 +54,8 @@ private final List<Project> projects = new ArrayList<>();
         List<Technology> kryptoTech = List.of(java);
 
         Project kryptoProject = new Project(
-                "Kryptografia",
-                "Projekt studencki - poznanie zasad działania DES'a. ",
+                "Cryptography",
+                "Collage project - getting to know DES better. ",
                 LocalDate.of(2026, 4, 1),
                 "krypto.png",
                 "https://github.com/VEXORjs/krypto",
@@ -82,8 +82,8 @@ private final List<Project> projects = new ArrayList<>();
         List<Technology> concurrentTech = List.of(csharp);
 
         Project concurrentProject = new Project(
-                "Programowanie współbieżne - gra w bilard",
-                "Poznanie zasad programowania współbieżnego",
+                "Concurrent programming - pool game",
+                "Getting to know the rules of concurrent programming.",
                 LocalDate.of(2026, 3, 1),
                 "wspolbiegi.png",
                 "https://github.com/VEXORjs/Kurs-programowanie-wspolbiezne",
@@ -96,8 +96,8 @@ private final List<Project> projects = new ArrayList<>();
         List<Technology> embeddedTech = List.of(c, cmake);
 
         Project embeddedProject = new Project(
-                "Systemy wbudowane - stacja pogodowa",
-                "Bliska praca z elektroniką",
+                "Embedded systems - weather station",
+                "Project focused on close working with electronics and C code.",
                 LocalDate.of(2026, 3, 2),
                 "wbudy.png",
                 "https://github.com/VEXORjs/stacja_pogodowa",
@@ -110,8 +110,8 @@ private final List<Project> projects = new ArrayList<>();
         List<Technology> AITech = List.of(python);
 
         Project AITechProject = new Project(
-                "Gra w 15tke",
-                "Stworzenie prostej gry logicznej",
+                "15 game",
+                "Made a simple 15 game in python.",
                 LocalDate.of(2026, 3, 12),
                 "sise.png",
                 "https://github.com/VEXORjs/15-Puzzle-game-Analysis",
