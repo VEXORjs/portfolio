@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kacper Adamczyk - Java Developer & Portfolio Projektów</title>
     <meta name="description" content="Portfolio Kacpra Adamczyka. Zobacz moje projekty w Spring Boot, Java i technologiach webowych.">
+    <link rel="icon" type="image/x-icon" th:href="@{/favicon.ico}">
     <link rel="stylesheet" th:href="@{/css/home.css(v=1.2)}">
     <link rel="stylesheet" th:href="@{/css/projects.css(v=1.2)}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+    <!--suppress JSUnresolvedLibraryURL -->
     <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
@@ -16,7 +18,9 @@
 <nav class="navbar">
     <div class="nav-left">
         <ul class="nav-links">
+            <a th:href="@{/#}">
             <img class="img" th:src="@{/logo.png}" alt="Logo">
+            </a>
             <a th:href="@{/#about_me}" class="button">About me</a>
             <a th:href="@{/#skill_set}" class="button">Skill set</a>
             <a th:href="@{/#projects}" class="button">Projects</a>
